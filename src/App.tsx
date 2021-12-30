@@ -17,7 +17,7 @@ function App() {
           isError: () => (
             <p>An error occured</p>
           ),
-          isSuccess: (query) => <InfiniteScroll hasNextPage={query.hasNextPage} loadMore={query.fetchNextPage}>
+          isSuccess: (query) => <InfiniteScroll hasNextPage={query.hasNextPage} loadMore={query.fetchNextPage} >
             {
               query.data.pages?.map((page: any) => {
                 return page.results.map((photo: Photo) => {
