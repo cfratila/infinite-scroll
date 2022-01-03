@@ -10,13 +10,13 @@ const InfiniteScroll = (props: Props) => {
   const loader = useRef(null);
   const { hasNextPage, loadMore, children } = props;
 
-   const handleObserver = useCallback((entries) => {
+  const handleObserver = useCallback((entries) => {
     const target = entries[0];
-    console.log('target', target);
+ 
     if (hasNextPage && target.isIntersecting) {
       loadMore();
     }
-  }, []);
+  }, [hasNextPage, loadMore]);
 
   useEffect(() => {    
     window.scrollTo({top: 0});
