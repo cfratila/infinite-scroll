@@ -30,6 +30,10 @@ const InfiniteScroll = (props: Props) => {
     if (loader.current) {
       observer.observe(loader.current);
     }
+
+    return () => {
+      observer.disconnect();
+    }
   }, [handleObserver]);
 
   return (
